@@ -51,7 +51,7 @@ const Drawer = ({
               className="flex-grow"
               icon={<BiPlus />}
               border
-              text="New Agent"
+              text="新代理"
               onClick={() => location.reload()}
             />
             <button
@@ -70,8 +70,8 @@ const Drawer = ({
 
             {agents.length === 0 && (
               <div>
-                Click the above button to restart. In the future, this will be a
-                list of your deployed agents!
+                点击上面的按钮重新启动。 未来，这将是一个
+                 您部署的代理列表！
               </div>
             )}
           </AnimatePresence>
@@ -86,19 +86,19 @@ const Drawer = ({
           {/*/>*/}
           <DrawerItem
             icon={<FaQuestionCircle />}
-            text="Help"
+            text="帮助"
             onClick={showHelp}
           />
-          <DrawerItem icon={<FaCog />} text="Settings" onClick={showSettings} />
+          <DrawerItem icon={<FaCog />} text="设置" onClick={showSettings} />
           <DrawerItem
             icon={<FaDiscord />}
-            text="Discord"
+            text="关于"
             href="https://discord.gg/jdSBAnmdnY"
             target="_blank"
           />
           <DrawerItem
             icon={<FaTwitter />}
-            text="Twitter"
+            text="信息"
             href="https://twitter.com/asimdotshrestha/status/1644883727707959296"
             target="_blank"
           />

@@ -61,9 +61,10 @@ const Home: NextPage = () => {
 
   const handleNewGoal = () => {
     setTasks([]);
+    const input = "用中文输出," + goalInput
     const agent = new AutonomousAgent(
       name,
-      goalInput,
+      input,
       handleAddMessage,
       () => setAgent(null),
       { customApiKey, customModelName }
@@ -110,19 +111,18 @@ const Home: NextPage = () => {
             >
               <div className="flex flex-row items-start shadow-2xl">
                 <span className="text-4xl font-bold text-[#C0C0C0] xs:text-5xl sm:text-6xl">
-                  Agent
+                  代理
                 </span>
                 <span className="text-4xl font-bold text-white xs:text-5xl sm:text-6xl">
                   GPT
                 </span>
                 <PopIn delay={0.5} className="sm:absolute sm:right-0 sm:top-2">
-                  <Badge>Beta 🚀</Badge>
+                  <Badge>测试 🚀</Badge>
                 </PopIn>
               </div>
               <div className="mt-1 text-center font-mono text-[0.7em] font-bold text-white">
                 <p>
-                  Assemble, configure, and deploy autonomous AI Agents in your
-                  browser.
+                在您的环境中组装、配置和部署自主 AI 代理浏览器.
                 </p>
               </div>
             </div>
@@ -137,7 +137,7 @@ const Home: NextPage = () => {
                   left={
                     <>
                       <FaRobot />
-                      <span className="ml-2">Name:</span>
+                      <span className="ml-2">名称:</span>
                     </>
                   }
                   value={name}
@@ -151,7 +151,7 @@ const Home: NextPage = () => {
                   left={
                     <>
                       <FaStar />
-                      <span className="ml-2">Goal:</span>
+                      <span className="ml-2">目标:</span>
                     </>
                   }
                   disabled={agent != null}
@@ -169,11 +169,11 @@ const Home: NextPage = () => {
                 className="sm:mt-10"
               >
                 {agent == null ? (
-                  "Deploy Agent"
+                  "部署"
                 ) : (
                   <>
                     <VscLoading className="animate-spin" size={20} />
-                    <span className="ml-2">Running</span>
+                    <span className="ml-2">运行中</span>
                   </>
                 )}
               </Button>
@@ -187,10 +187,10 @@ const Home: NextPage = () => {
                 {shouldAgentStop ? (
                   <>
                     <VscLoading className="animate-spin" size={20} />
-                    <span className="ml-2">Stopping</span>
+                    <span className="ml-2">停止中</span>
                   </>
                 ) : (
-                  "Stop agent"
+                  "停止代理"
                 )}
               </Button>
             </Expand>

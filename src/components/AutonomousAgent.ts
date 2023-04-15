@@ -74,7 +74,7 @@ class AutonomousAgent {
     }
 
     this.numLoops += 1;
-    const maxLoops = this.modelSettings.customApiKey === "" ? 4 : 25;
+    const maxLoops = this.modelSettings.customApiKey === "" ? 4 : 100;
     if (this.numLoops > maxLoops) {
       this.sendLoopMessage();
       this.shutdown();
@@ -195,8 +195,8 @@ class AutonomousAgent {
       type: "system",
       value:
         this.modelSettings.customApiKey !== ""
-          ? `This agent has been running for too long (25 Loops). To save your wallet, and our infrastructure costs, this agent is shutting down. In the future, the number of iterations will be configurable.`
-          : "We're sorry, because this is a demo, we cannot have our agents running for too long. Note, if you desire longer runs, please provide your own API key in Settings. Shutting down.",
+          ? `该代理运行时间过长（25 个循环）。 为了节省您的钱包和我们的基础设施成本，该代理正在关闭。 以后迭代次数可配置.`
+          : "很抱歉，因为这是一个演示，我们不能让我们的代理运行太久。 请注意，如果您希望运行更长的时间，请在设置中提供您自己的 API 密钥。 关机.",
     });
   }
 

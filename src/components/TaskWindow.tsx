@@ -11,7 +11,7 @@ export const TaskWindow = ({ tasks }: TaskWindowProps) => {
     <Expand className="xl m-3 hidden h-[65%] w-[20rem] flex-col items-center overflow-auto rounded-2xl border-2 border-white/30 bg-zinc-900 font-mono shadow-2xl xl:flex">
       <div className="w-full px-2">
         <div className="sticky top-0 my-2 flex items-center justify-center gap-2 bg-zinc-900 p-2 text-white">
-          <FaListAlt /> Current tasks
+          <FaListAlt /> 当前任务
         </div>
         <div className="flex flex-col gap-2">
           {tasks.map((task, index) => (

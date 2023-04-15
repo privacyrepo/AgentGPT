@@ -163,7 +163,7 @@ const MacWindowHeader = () => {
           onClick={(): void => saveElementAsImage(messageListId)}
         >
           <FaSave size={12} />
-          <p className="font-mono">Save</p>
+          <p className="font-mono">保存</p>
         </div>
       </PopIn>
 
@@ -173,7 +173,7 @@ const MacWindowHeader = () => {
           onClick={(): void => copyElementText(messageListId)}
         >
           <FaClipboard size={12} />
-          <p className="font-mono">Copy</p>
+          <p className="font-mono">复制</p>
         </div>
       </PopIn>
     </div>
@@ -216,7 +216,7 @@ const ChatMessage = ({ message }: { message: Message }) => {
 
       {message.type == "thinking" && (
         <span className="italic text-zinc-400">
-          (Restart if this takes more than 30 seconds)
+          (如果思考超过30秒重新启动)
         </span>
       )}
 
@@ -236,7 +236,7 @@ const ChatMessage = ({ message }: { message: Message }) => {
       <div className="relative">
         {copied ? (
           <span className="absolute bottom-0 right-0 rounded-full border-2 border-white/30 bg-zinc-800 p-1 px-2 text-gray-300">
-            Copied!
+            已复制!
           </span>
         ) : (
           <span
@@ -290,13 +290,13 @@ const getMessageIcon = (message: Message) => {
 const getMessagePrefix = (message: Message) => {
   switch (message.type) {
     case "goal":
-      return "Embarking on a new goal:";
+      return "踏上新的目标:";
     case "task":
-      return "Added task:";
+      return "新任务:";
     case "thinking":
-      return "Thinking...";
+      return "思考中...";
     case "action":
-      return message.info ? message.info : "Executing:";
+      return message.info ? message.info : "执行中:";
   }
 };
 

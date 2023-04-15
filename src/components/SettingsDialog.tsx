@@ -36,35 +36,31 @@ export default function SettingsDialog({
       header="Settings ⚙"
       isShown={show}
       close={handleClose}
-      footerButton={<Button onClick={handleSave}>Save</Button>}
+      footerButton={<Button onClick={handleSave}>保存</Button>}
     >
       <div className="text-md relative flex-auto p-2 leading-relaxed">
         <p className="mb-3">
-          Welcome to AgentGPT! We&apos;re receiving traffic far higher than our
-          small team is able to provide for at the moment.
+        欢迎来到 AgentGPT！ 我们收到的流量远远高于我们的流量小团队目前能够提供.
         </p>
         <p className="mb-3">
-          Because of this, we momentarily ask that users utilize their own
-          OpenAI API key for AgentGPT.{" "}
+        因此，我们暂时要求用户使用自己的AgentGPT的OpenAI API密钥。{" "}
           <em>
-            This will only be used in the current browser session and not stored
-            anywhere.
+          这只会在当前浏览器会话中使用，不会存储任何地方。
           </em>{" "}
-          If you elect not to, your agent will not be able to execute for very
-          long. To do this, sign up for an OpenAI account and visit the
-          following{" "}
+          如果您选择不这样做，您的代理人将无法执行很长时间
+           长的。 为此，请注册一个OpenAI帐户并访问下列的{" "}
           <a
             href="https://platform.openai.com/account/api-keys"
             className="text-blue-500"
           >
-            link.
+            链接.
           </a>
         </p>
         <Input
           left={
             <>
               <FaMicrochip/>
-              <span className="ml-2">Model:</span>
+              <span className="ml-2">模型:</span>
             </>
           }
           placeholder={"gpt-3.5-turbo"}
@@ -84,8 +80,8 @@ export default function SettingsDialog({
           onChange={(e) => setKey(e.target.value)}
         />
         <strong className="mt-10">
-          NOTE: This must be a PAID OpenAI API account, not the free tier. This
-          is different from a ChatGPT Plus subscription.
+        注意：这必须是付费的 OpenAI API 帐户，而不是免费套餐。 这
+           不同于ChatGPT Plus订阅。
         </strong>
       </div>
     </Dialog>
